@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/caticon.ico">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+
+    <script type="text/javascript" src="js/create.js"></script>
+
+    <p><img id="gotologo" src="images/GoTo_SLogo.png" alt="gotologo" width="92" height="41"></p>
+
+    <p style="text-align:center;"><img src="images/GoTo_SLogo.png" alt="Logo" width="300" height="150"></p>
+
+
+<body onload="pageLoads();" style="background: rgba(0, 0, 0, 0.767)" body></body>
+
+</head>
+
+<title>Outages - Checklist</title>
+
+<form>
+
+    <div>
+
+        <div class="center">
+            <h1>Inbound Care Outage</h1>
+            <h3>Service Disruption Checklist</h3>
+        </div><br>
+
+        <div class="table-responsive"><label><strong>Date/Time</strong></label></div>
+            
+        <div class="datetime">
+                <input type="datetime-local" id="dateTime" class="dateTime" value="" />
+        </div><br>
+
+        <div class="form-group">
+            <label><strong>Outage Service Disruption</strong></label>
+            <textarea class="form-control" id="servicedisruption"></textarea>
+        </div>
+
+        <label for="products"><strong>Choose your products:</strong></label><br>
+
+            <select id="products" class="form-select form-select-lg mb-3" multiple aria-label=".form-select-lg example">
+                <option value='GoToMeeting'>GoToMeeting</option>
+                <option value='GoToWebinar'>GoToWebinar</option>
+                <option value='GoToTraining'>GoToTraining</option>
+                <option value='OpenVoice'>OpenVoice</option>
+                <option value='LastPass'>LastPass</option>
+                <option value='GoToConnect'>GoToConnect</option>
+                <option value='GoTo Pro/Central'>GoTo Pro/Central</option>
+                <option value='GoToMyPC'>GoToMyPC</option>
+                <option value='Hamachi'>Hamachi</option>
+                <option value='GoTo Resolve '>GoTo Resolve </option>
+                <option value='Grasshopper'>Grasshopper</option>
+                <option value='join.me'>join.me</option>
+                <option value='Rescue'>Rescue</option>
+                <option value='GoToAssist Remote Support v5'>GoToAssist Remote Support v5</option>
+                <option value='GoToAssist Remote Support v4'>GoToAssist Remote Support v4</option>
+                <option value='GoToAssist Service Desk'>GoToAssist Service Desk</option>
+                <option value='GoToAssist Corporate'>GoToAssist Corporate</option>
+                <option value='GoToAssist Seelt'>GoToAssist Seelt</option>
+                <option value='Rescue Live Guide'>Rescue Live Guide</option>
+                <option value='Rescue Live Lens'>Rescue Live Lens</option>
+                <option value='GoToMeeting API '>GoToMeeting API </option>
+                <option value='GoToTraining API'>GoToTraining API</option>
+                <option value='GoToWebinar API'>GoToWebinar API</option>
+                <option value='GoToConnect API '>GoToConnect API </option>
+                <option value='GoToAssist Service Desk API'>GoToAssist Service Desk API</option>
+                <option value='GoToAssist Remote Support API '>GoToAssist Remote Support API </option>
+                <option value='GoToAssist Corporate API '>GoToAssist Corporate API </option>
+                <option value='GoTo Developer Center Frontend'>GoTo Developer Center Frontend</option>
+                <option value='Admin API '>Admin API </option>
+                <option value='SCIM API '>SCIM API </option>
+                <option value='Authentication API '>Authentication API </option>
+                <option value='GoTo Contact Center'>GoTo Contact Center</option>
+            </select>
+        
+        <div class="center">
+        <h2>Care Alert</h2>
+        </div>    
+
+        <div class="row">
+            <div class="col">
+                <strong>Inbound Incident Owner</strong><input type="text" class="form-control" id="incidentowner">
+            </div>
+            <div class="col">
+              <label class="dateTimeTwo"><strong>Time Issue identified</strong></label><br>
+              <input type="datetime-local" id="dateTimeTwo" class="dateTimeTwo" value="" />
+            </div>
+        </div><br>
+
+
+        <div class="center">
+            <h2>NOC/FRT Alert</h2>
+        </div>    
+
+        <div class="row">
+            <div class="col">
+                <strong>NOC Interaction Owner</strong><input type="text" class="form-control" id="nocinteractionowner">
+            </div>
+            <div class="col">
+                <strong>NOC Notification</strong><input type="text" class="form-control" id="nocnotification">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+            <strong>FRT Interaction Owner</strong><input type="text" class="form-control" id="frtinteractionowner">
+            </div>
+            <div class="col">
+              <strong>FRT Notification</strong><input type="text" class="form-control" id="frtnotification">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+              <strong>Jira Ticket</strong><input type="text" class="form-control" id="jiraticket">
+            </div>
+            <div class="col">
+              <strong>Incident Slack Channel</strong><input type="text" class="form-control" id="incidentslackchannel">
+            </div>
+        </div><br>
+
+        <div class="form-group">
+            <label><strong>Incident Description</strong></label>
+            <textarea class="form-control" id="incidentdescription" rows="3"></textarea>
+        </div>
+
+        <div class="center">
+            <h2>IVR</h2>
+        </div>
+
+        <div class="row">
+            <div class="col">
+              <strong>IVR Changes Owner</strong><input type="text" class="form-control" id="ivrchangesowner">
+            </div>
+            <div class="col">
+              <strong>IVR Implementation</strong><input type="text" class="form-control" id="ivrimplementation">
+            </div>
+            <div class="col">
+              <strong>IVR Removed</strong><input type="text" class="form-control" id="ivrremoved">
+              </div>
+        </div><br>
+
+        <div class="center">
+            <h2>Agent Messaging</h2>
+        </div>
+
+        <div class="row">
+            <div class="col">
+              <strong>Agent Messaging Owner</strong><input type="text" class="form-control" id="agentmessagingowner">
+            </div>
+            <div class="col">
+              <strong>Agent Messaging</strong><input type="text" class="form-control" id="agentmessaging">
+            </div>
+        </div><br>
+
+        <button type="button" class="btn btn-success" value="Copy" id="button" onclick="createTemplate();">Create template</button><br><br>
+
+
+        <button type="button" class="btn btn-danger" onclick="resetAll();">Reset</button>
+
+        <br><br>
+
+            </div>
+        </div>
+    </div>
+    
+</form><br><br><br>
+
+<!-- This will most likely be used later on. 
+
+<textarea class="test" name="text" id="temp" wrap="soft"></textarea><br><br>
+
+-->
+
+<footer>
+    <p>Copyright © 2022 - Designed by David Díaz<br>
+</footer>
+
+</html>

@@ -1,0 +1,143 @@
+body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 32px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+  
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+  
+  textarea {
+    width: 400px;
+    height: 50px;
+  }
+  
+  .test {
+    width: 5px;
+    height: 5px;
+  }
+  
+  input {
+    width: 850px;
+    height: 30px;
+  }
+  
+  .button.block {
+    display: block;
+    width: 200px;
+  }
+  
+  .margin-auto {
+    margin: 0 auto;
+  }
+  
+  form {
+    margin: auto;
+    width: 500px;
+  }
+  
+  .centerText {
+    text-align: center;
+  }
+  
+  .aligncenter {
+    text-align: center;
+    width: 50%;
+    margin: 10px auto 20px;
+    display: block;
+  }
+
+  #gotologo{
+
+    position: relative;
+
+    top: 10px;
+    right: -10px;
+
+  }
+  
+  form {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 25px;
+    margin: 10px;
+    margin: auto;
+    width: 800px;
+    border-radius: 70px;
+    border: groove 1em rgb(255, 230, 0);
+  }
+
+  .button{
+
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .cpy {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.274);
+}
+
+.center {
+  text-align: center;
+  text-decoration: underline;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  text-decoration-color: rgb(250, 232, 74);
+  
+}
+
+.dateTime{
+
+  width: 25%;
+
+}
+
+.dateTimeTwo{
+
+  width: 45%;
+  position: absolute;
+  right: 12px;
+
+}
+
