@@ -55,6 +55,8 @@ function createTemplate() {
     var wd = new Intl.DateTimeFormat('en', { weekday: 'long' }).format(d);
     var ti = new Intl.DateTimeFormat('en', { hour: 'numeric', hour12: true, minute: '2-digit'}).format(d);
 
+    var finalFirstDate = mo + " " + da + ", " + ye + ", " + ti;
+
     console.log("1st Date: " + mo + " " + da + ", " + ye + ", " + ti);
 
     // Let's now get our 2nd date/time
@@ -92,6 +94,8 @@ function createTemplate() {
     var daTwo = new Intl.DateTimeFormat('en', { day: 'numeric' }).format(dTwo);
     var wdTwo = new Intl.DateTimeFormat('en', { weekday: 'long' }).format(dTwo);
     var tiTwo = new Intl.DateTimeFormat('en', { hour: 'numeric', hour12: true, minute: '2-digit'}).format(dTwo);
+
+    var finalSecondDate = mo + " " + da + ", " + ye + ", " + ti;
 
     console.log("2nd Date: " + moTwo + " " + daTwo + ", " + yeTwo + ", " + tiTwo);
 
@@ -147,11 +151,71 @@ function createTemplate() {
 
     notifyMe();
 
-    // Alright, let's now print our new page.
+    // Alright, let's now print our new page. Leaving template below as a guide.
 
-    var winPrint = window.open('Outage Service Disruption Checklist', '', 'left=0,top=0,width=450,height=400,toolbar=0,scrollbars=0,status=0');
-    winPrint.document.write('<title>Outage Service Disruption Checklist</title><strong>Checklist</strong>'
+    // <!DOCTYPE html>
+    // <html lang="en">
+    // <head>
+    //     <meta charset="UTF-8">
+    //     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    //     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    //     <title>Document</title>
+    // </head>
+    // <body>
+        
+    // </body>
+    // </html>
+
+    var winPrint = window.open('Outage Service Disruption Checklist', 'windowOpenTab', 'scrollbars=yes,resizable=1,width=500,height=900,left=0, top=0');
+
+    winPrint.document.write(
+    '<!DOCTYPE html>' + 
+    '<html lang="en">' +
+    '<head>' + 
+    '<style>' +
+    'html {' +
+        'height: 110%;' +
+        'margin-bottom: 0.01em;' +
+    '}' +
+    '</style>' +
+    '<meta charset="UTF-8">' +
+    //'<meta http-equiv="X-UA-Compatible" content="IE=edge"' +
+    '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
+    '<title>Outage Service Disruption Checklist</title>' +
+    '</head>' +
+    '<body>' +
+    '<strong><h1>--- Checklist ---</h1></strong><br>' +
+    '<strong>Date: </strong>' + finalFirstDate + '<br><strong>Outage Service Disruption: </strong>' + serviceDisruption + 
+    '<br><strong>Product(s): </strong>' + fixedProducts + 
     
+    // Care Alert section starts
+    
+    '<br><strong><h2>Care Alert</h2></strong><br>' + 
+    '<strong>Inbound Incident Owner: </strong>' + incidentOwner + '<br><strong>Time issue identified: </strong>' + finalFirstDate + '<br>' +
+
+    // NOC/FRT section starts '<strong>xxx</strong>'
+    '<br><strong><h2>NOC/FRT Alert</h2></strong><br>' + 
+    '<strong>NOC Interaction Owner: </strong>' + nocInteractionOwner + '<br><strong>NOC Notification: </strong>' + nocNotification +
+    '<br><strong>FRT Interaction Owner: </strong>' + frtInteractionOwner + '<br><strong>FRT Notification: </strong>' + frtNotification +
+    '<br><strong>Jira Ticket: </strong>' + jiraTicket + '<br><strong>Incident Slack Channel: </strong>' + incidentSlackChannel + 
+    '<br><strong>Incident Description: </strong>' + incidentDescription + 
+
+    // IVR section starts
+
+    '<br><strong><h2>IVR</h2></strong><br>' + 
+    '<strong>IVR Changes Owner: </strong>' + ivrChangesOwner + '<br><strong>IVR Implementation: </strong>' + ivrImplementation + 
+    '<strong>IVR Removed: </strong>' + ivrRemoved +
+
+    // Agent Messaging sections starts
+
+    '<br><strong><h2>Agent Messaging</h2></strong><br>' + 
+    '<strong>Agent Messaging Owner: </strong>' + agentMessagingOwner + '<br><strong>Agent Messaging: </strong>' + agentMessaging + 
+
+    '<br><br>-------------------<br><br><i><h4>Credits to: David Díaz - SRE</h4></i>' +
+
+    '</body>' +
+    '</html>'
+
     );
 
 
@@ -189,7 +253,7 @@ function notifyMe() {
     else {
      var notification = new Notification('Thanks for using Daviixos Tools!', {
       icon: 'images/caticon.ico',
-      body: 'You may click this notification for a surprise',
+      body: 'You may click this notification for a surprise :D',
      });
      notification.onclick = function() {
       window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
